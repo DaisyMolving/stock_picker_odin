@@ -19,4 +19,8 @@ class Stockpicker
 	 greatest_profit = combo_difference.max
 	 greatest_profit
   end
+
+  def find_best_buysell_days(stock_values)
+
+  end
 end
