@@ -24,4 +24,10 @@ describe Stockpicker do
 	 result = stocks.find_combos([4,5,6])
 	 expect(result).to eq [[6,5], [6,4], [5,4]]
   end
+
+  it 'finds combo that gives highest profit, [[6,5], [6,4], [5,4] gives highest profit of 2' do
+	 stocks = Stockpicker.new
+	 result = stocks.find_greatest_profit([4,5,6])
+	 expect(result).to eq 2
+  end
 end
