@@ -25,21 +25,38 @@ describe Stockpicker do
 	 expect(result).to eq [[6,5], [6,4], [5,4]]
   end
 
-  it 'finds combo that gives highest profit, [[6,5], [6,4], [5,4] gives highest profit of 2' do
+  it 'takes combos [[6,5], [6,4], [5,4] gives differences as [1, 2, 1]' do
 	 stocks = Stockpicker.new
-	 result = stocks.find_greatest_profit([4,5,6])
-	 expect(result).to eq 2
+	 result = stocks.find_combo_differences([4,5,6])
+	 expect(result).to eq [1, 2, 1]
   end
 
-  it 'finds combo that gives highest profit, [[9,3], [9,7], [3,7]] gives highest profit of 6' do
+  it 'takes combos [[9,3], [9,7], [3,7]] gives differences as [6, 2, -4]' do
 	 stocks = Stockpicker.new
-	 result = stocks.find_greatest_profit([7,3,9])
+	 result = stocks.find_combo_differences([7,3,9])
+	 expect(result).to eq [6, 2, -4]
+  end
+
+  it 'takes differences [6, 2, -4] and returns highest value 6' do
+	 stocks = Stockpicker.new
+	 result = stocks.find_highest_profit([7,3,9])
 	 expect(result).to eq 6
   end
 
-  it 'finds index position of best day to buy and sell, based on highest profit, for [17,3,6,9,15,8,6,1,10] returns [1,4]'do
+  it 'takes differences [1, 2, 1] and returns highest value 2' do
 	 stocks = Stockpicker.new
-	 result = stocks.find_best_buysell_days([17,3,6,9,15,8,6,1,10])
-	 expect(result).to eq [1,4]
+	 result = stocks.find_highest_profit([4,5,6])
+	 expect(result).to eq 2
   end
+  # it 'finds index position of best day to buy and sell, based on highest profit, for [17,3,6,9,15,8,6,1,10] returns [1,4]'do
+	 # stocks = Stockpicker.new
+	 # result = stocks.find_best_buysell_days([17,3,6,9,15,8,6,1,10])
+	 # expect(result).to eq [1,4]
+  # end
+
+  # it 'finds index position of best day to buy and sell, based on highest profit, for [8, 3, 20, 7, 4, 1]' do
+	 # stocks = Stockpicker.new
+	 # result = stocks.find_best_buysell_days([8,3,20,7,4,1])
+	 # expect(result).to eq [1,2]
+  # end
 end

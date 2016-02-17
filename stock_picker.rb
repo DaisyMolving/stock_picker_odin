@@ -10,18 +10,26 @@ class Stockpicker
 	 all_combos
   end
 
-  def find_greatest_profit(stock_values)
+  def find_combo_differences(stock_values)
 	 combo_difference = []
 	 all_combos = find_combos(stock_values)
 	 all_combos.each do |combo|
 		combo_difference << combo.reduce(:-)
 	 end	
+	 combo_difference
+  end
+
+  def find_highest_profit(stock_values)
+	 combo_difference = find_combo_differences(stock_values)
 	 greatest_profit = combo_difference.max
 	 greatest_profit
   end
-
   def find_best_buysell_days(stock_values)
+	greatest_profit = find_greatest_profit(stock_values)
+	# all_combos = find_combos(stock_values)
+	# best_buysell_days = []
 
-	 [1,4]
+	index_of_combo = combo_difference.index(greatest_profit)
+	index_of_combo
   end
 end
