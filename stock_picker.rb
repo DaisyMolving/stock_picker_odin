@@ -10,4 +10,8 @@ class Stockpicker
 	 all_combos
   end
 
+  def find_greatest_profit(stock_values)
+
+	 2
+  end
 end
