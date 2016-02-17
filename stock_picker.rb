@@ -11,7 +11,12 @@ class Stockpicker
   end
 
   def find_greatest_profit(stock_values)
-
-	 2
+	 combo_difference = []
+	 all_combos = find_combos(stock_values)
+	 all_combos.each do |combo|
+		combo_difference << combo.reduce(:-)
+	 end	
+	 greatest_profit = combo_difference.max
+	 greatest_profit
   end
 end
