@@ -24,12 +24,19 @@ class Stockpicker
 	 greatest_profit = combo_difference.max
 	 greatest_profit
   end
+
   def find_best_buysell_days(stock_values)
-	greatest_profit = find_greatest_profit(stock_values)
-	# all_combos = find_combos(stock_values)
-	# best_buysell_days = []
+	greatest_profit = find_highest_profit(stock_values)
+	combo_difference = find_combo_differences(stock_values)
+	all_combos = find_combos(stock_values)
+	best_buysell_days = []
 
 	index_of_combo = combo_difference.index(greatest_profit)
-	index_of_combo
+	found_combo = all_combos[index_of_combo]
+	found_combo.reverse!
+	found_combo.each do |value|
+	  best_buysell_days << stock_values.index(value)
+	end
+	best_buysell_days
   end
 end
