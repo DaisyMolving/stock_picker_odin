@@ -1,7 +1,8 @@
 class Stockpicker
   def reverse_values(stock_values)
-	 [9,3,7,1]
-
+	 reversed_stocks = stock_values.reverse
+	 reversed_stocks
   end
+
 
 end
