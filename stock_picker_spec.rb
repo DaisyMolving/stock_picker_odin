@@ -36,4 +36,10 @@ describe Stockpicker do
 	 result = stocks.find_greatest_profit([7,3,9])
 	 expect(result).to eq 6
   end
+
+  it 'finds index position of best day to buy and sell, based on highest profit, for [17,3,6,9,15,8,6,1,10] returns [1,4]'do
+	 stocks = Stockpicker.new
+	 result = stocks.find_best_buysell_days([17,3,6,9,15,8,6,1,10])
+	 expect(result).to eq [1,4]
+  end
 end
