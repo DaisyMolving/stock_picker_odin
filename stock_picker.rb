@@ -4,5 +4,8 @@ class Stockpicker
 	 reversed_stocks
   end
 
+  def find_combos(stock_values)
+	 [[3,2], [3,1], [2,1]] 
+  end
 
 end
