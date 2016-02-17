@@ -1,0 +1,3 @@
+class Stockpicker
+
+end
