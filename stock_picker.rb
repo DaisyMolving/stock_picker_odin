@@ -5,7 +5,9 @@ class Stockpicker
   end
 
   def find_combos(stock_values)
-	 [[3,2], [3,1], [2,1]] 
+	 reversed_stocks = reverse_values(stock_values)
+	 all_combos = reversed_stocks.combination(2).to_a
+	 all_combos
   end
 
 end
