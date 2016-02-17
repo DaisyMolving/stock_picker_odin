@@ -18,4 +18,10 @@ describe Stockpicker do
 	 result = stocks.find_combos([1,2,3])
 	 expect(result).to eq [[3,2], [3,1], [2,1]]
   end
+
+  it 'finds all combos of reversed figures, [4,5,6], and reutrns to an array [[6,5], [6,4], [5,4]]' do
+	 stocks = Stockpicker.new
+	 result = stocks.find_combos([4,5,6])
+	 expect(result).to eq [[6,5], [6,4], [5,4]]
+  end
 end
